@@ -39,6 +39,7 @@ exports.addOne = async (req, res) => {
     const newDepartment = new Department({ name: name });
     await newDepartment.save();
     const departments = await Department.find();
+    res.json({ message: 'OK' });
     res.json(departments);
 
   } catch(err) {
@@ -53,6 +54,7 @@ exports.updateOne = async (req, res) => {
     if(dep) {
       await Department.updateOne({ _id: req.params.id }, { $set: { name: name }});
       const departments = await Department.find();
+      res.json({ message: 'OK' });
       res.json(departments);
     }
     else res.status(404).json({ message: 'Not found...' });
@@ -68,6 +70,7 @@ exports.deleteOne = async (req, res) => {
     if(dep) {
       await Department.deleteOne({ _id: req.params.id });
       const departments = await Department.find();
+      res.json({ message: 'OK' });
       res.json(departments);
     }
     else res.status(404).json({ message: 'Not found...' });
