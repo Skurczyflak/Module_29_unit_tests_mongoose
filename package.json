@@ -1,0 +1,20 @@
+{
+  "name": "ComapnyApp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "mocha --watch \"./{,!(node_modules)/**/}*.test.js\""
+  },
+  "dependencies": {
+    "chai": "^6.2.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mocha": "^11.7.5",
+    "mongodb": "^4.17.0",
+    "mongoose": "^7.4.3",
+    "nodemon": "^1.19.1",
+    "yarn": "^1.22.22"
+  }
+}
